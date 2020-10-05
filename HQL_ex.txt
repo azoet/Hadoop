@@ -1,0 +1,6 @@
+Steps taken:
+Connect to edge of the cluster by connection to vpn and using ssh (putty).
+Create (on edge) the hql scripts.
+Connect to hive with beeline and connect to right database.
+Send the created queries using the run command.
+Send the hql scripts from the edge to local using psftp (putty).

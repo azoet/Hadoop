@@ -1,0 +1,19 @@
+CREATE EXTERNAL TABLE IF NOT EXISTS 
+amir_drivers_csv
+(driverId INT,name STRING,ssn STRING,location STRING,certified STRING,wageplan STRING)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+STORED AS textfile
+LOCATION 'drivers'
+tblproperties("skip.header.line.count" = "1");
+
+CREATE EXTERNAL TABLE IF NOT EXISTS 
+amir_drivers_orc
+(driverId INT,name STRING,ssn STRING,location STRING,certified STRING,wageplan STRING)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+STORED AS ORC
+LOCATION 'drivers/orc';
+
+INSERT INTO TABLE amir_drivers_orc SELECT * FROM amir_drivers_csv;
+SELECT * FROM amir_drivers_orc LIMIT 10;
