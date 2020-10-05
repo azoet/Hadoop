@@ -1,4 +1,4 @@
-#Hadoop class at DSTI.
+# Hadoop class at DSTI.
 
 To see YARN in action, there are mapper and reducer functions written in python, which are used by a provided jar file to make it possible to code the functions in python rather than in java.
 The mapper and reducer were made to do a word count on a sample text.
